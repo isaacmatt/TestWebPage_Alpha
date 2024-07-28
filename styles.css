@@ -1,0 +1,21 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.parallax {
+    background-image: url('images/your-image.jpg');
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    height: 500px;
+    background-color: white;
+    text-align: center;
+    padding: 50px;
+}
