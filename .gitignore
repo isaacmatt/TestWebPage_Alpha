@@ -1,0 +1,14 @@
+# Logs
+logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Node modules (if using Node.js)
+node_modules/
+
+# Build directories (if using build tools)
+dist/
+build/
