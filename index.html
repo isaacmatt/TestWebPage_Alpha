@@ -3,13 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Graphics with Three.js</title>
+    <title>My Test Page with Three.js</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rotating Cube with Three.js</h1>
-    <div id="container"></div>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home" class="parallax" data-speed="0.5">
+        <h1>Welcome to My Three.js Demo</h1>
+        <p>Explore the rotating cube and more!</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About This Project</h2>
+        <p>This project showcases a rotating 3D cube created using the Three.js library. Three.js is a powerful JavaScript library that allows developers to create 3D graphics in the browser using WebGL.</p>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo">
+        <h2>Rotating Cube Demo</h2>
+        <div id="container"></div>
+    </section>
+    <section id="parallax-section" class="parallax" data-speed="0.5">
+        <div class="content">
+            <h2>Welcome to the Parallax Section</h2>
+            <p>Scroll down to see the parallax effect with your image as the background.</p>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or comments, feel free to reach out!</p>
+        <form action="https://example.com/submit-form" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Matt I. All rights reserved.</p>
+        <p>Follow me on <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a> | <a href="https://github.com/yourprofile" target="_blank">GitHub</a></p>
+    </footer>
+
+    <!-- External Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="main.js"></script>
+
+    <!-- Parallax Effect Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            let scrolled = window.pageYOffset;
+            let parallaxElements = document.querySelectorAll('.parallax');
+            parallaxElements.forEach(function(parallax) {
+                // Ensure speed is a valid number and default to 0.5 if not provided
+                let speed = parseFloat(parallax.getAttribute('data-speed')) || 0.5;
+                parallax.style.transform = 'translateY(' + (scrolled * speed) + 'px)';
+            });
+        });
+    </script>
 </body>
 </html>

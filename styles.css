@@ -18,3 +18,25 @@ h1 {
     width: 600px;
     height: 400px;
 }
+
+
+/* Parallax effect styling */
+.parallax {
+    background-image: url('photos/pexels-alex-montes-892479-1820563.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.parallax .content {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to improve text readability */
+    border-radius: 10px;
+}
