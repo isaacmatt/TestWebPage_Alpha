@@ -5,7 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Test Page with Three.js</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <style>
+        /* Reset default margin and padding */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Style the navigation bar */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        
+        /* Style the list inside the navigation bar */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Style the list items */
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        /* Style the links inside the list items */
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        /* Add a hover effect to the links */
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        
+        /* Make the nav bar responsive */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body class="test_20">
 
@@ -20,7 +71,7 @@
     </nav>
 
     <!-- Header Section -->
-    <header id="home" class="parallax" data-speed="0.4">
+    <header id="home" >
         <h1>Welcome to My Three.js Demo</h1>
         <p>Explore the rotating cube and more!</p>
     </header>
@@ -31,17 +82,18 @@
         <p>This project showcases a rotating 3D cube created using the Three.js library. Three.js is a powerful JavaScript library that allows developers to create 3D graphics in the browser using WebGL.</p>
     </section>
 
-    <!-- Demo Section -->
-    <section id="demo">
-        <h2>Rotating Cube Demo</h2>
-        <div id="container"></div>
-    </section>
-    <section id="parallax-section" class="parallax" data-speed="0.4">
-        <div class="content">
-            <h2>Welcome to the Parallax Section</h2>
-            <p>Scroll down to see the parallax effect with your image as the background.</p>
-        </div>
-    </section>
+<!-- Demo Section for Cube -->
+<section id="cube-demo">
+    <h2>Rotating Cube Demo</h2>
+    <div id="cube-container"></div>
+</section>
+
+<!-- Demo Section for Torus Knot -->
+<section id="torus-demo">
+    <h2>Torus Knot Demo</h2>
+    <div id="torus-container"></div>
+</section>
+    
     
     <!-- Contact Section -->
     <section id="contact">

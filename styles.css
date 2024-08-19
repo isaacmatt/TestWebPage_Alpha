@@ -2,8 +2,8 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content:left;
+    align-items:baseline;
     height: 100vh;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -19,6 +19,12 @@ h1 {
     height: 400px;
 }
 
+#cube-container, #torus-container {
+    margin: 20px auto;
+    width: 600px;
+    height: 400px;
+}
+
 
 /* Background*/
 .test_20 {
@@ -27,7 +33,7 @@ h1 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1500px; /* Adjust the height as needed */
+    height: 2000px; /* Adjust the height as needed */
     display: flex;
     justify-content: center;
     align-items: center;
