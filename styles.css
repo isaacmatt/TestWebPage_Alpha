@@ -9,6 +9,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
+
 h1 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -27,18 +29,14 @@ h1 {
 
 
 /* Parallax effect styling */
-.parallax {
+#test_20 {
+    background-color: #f0f0f0; /* For a solid color background */
     background-image: url('photos/pexels-alex-montes-892479-1820563.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px; /* Adjust the height as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+    background-size: cover; /* Adjust the image to cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-attachment: fixed; /* Fix the background relative to the viewport */
+    height: 100vh; /* Ensure the background covers the full viewport height */
 }
 
 .parallax .content {
