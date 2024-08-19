@@ -26,20 +26,20 @@ h1 {
 }
 
 
-/* Background*/
-.test_20 {
+/* Parallax effect styling */
+.parallax {
     background-image: url('photos/pexels-alex-montes-892479-1820563.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 2000px; /* Adjust the height as needed */
+    height: 500px; /* Adjust the height as needed */
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
-    z-index: -99;}
+}
 
 .parallax .content {
     padding: 20px;
