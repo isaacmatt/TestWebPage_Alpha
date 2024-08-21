@@ -28,6 +28,16 @@ h1 {
     height: 400px;
 }
 
+#video-container {
+    width: 600px;
+    height: auto;
+}
+
+video {
+    width: 100%;
+    height: auto;
+  }
+
 
 /* Parallax effect styling */
 #test_20 {
