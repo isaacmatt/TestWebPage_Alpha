@@ -22,21 +22,37 @@ h1 {
     height: 400px;
 }
 
-#cube-container, #torus-container {
+#cube-container, #torus-container, #video-container {
     margin: 20px auto;
     width: 600px;
     height: 400px;
 }
 
-#video-container {
-    width: 600px;
-    height: auto;
+/* Wrapper for maintaining aspect ratio */
+.video-container {
+    position: relative;
+    width: 100%; /* Full width on smaller screens */
+    padding-top: 80%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+    margin: 10px auto; /* Adjust margin for smaller screens */
 }
 
-video {
+/* Video element inside the container */
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-  }
+    height: 100%;
+}
+
+/* Responsive styling for screens 768px and smaller */
+@media (max-width: 768px) {
+    #cube-container, #torus-container, #video-container {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Adjust height to maintain aspect ratio */
+        margin: 10px auto; /* Adjust margin for smaller screens */
+    }
+}
 
 
 /* Parallax effect styling */
