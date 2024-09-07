@@ -28,6 +28,12 @@ h1 {
     height: 400px;
 }
 
+#calendar-container {
+    margin: 20px auto;
+    width: 1200px;
+    height: 800px;
+}
+
 /* Wrapper for maintaining aspect ratio */
 .video-container {
     position: relative;
