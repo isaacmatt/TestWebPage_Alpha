@@ -34,6 +34,12 @@ h1 {
     height: 800px;
 }
 
+#gantt-container {
+    margin: 20px auto;
+    width: 1200px;
+    height: 800px;
+}
+
 /* Wrapper for maintaining aspect ratio */
 .video-container {
     position: relative;
