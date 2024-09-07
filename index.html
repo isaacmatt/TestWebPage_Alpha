@@ -63,6 +63,10 @@
             }
         }
     </style>
+    <!-- Include dhtmlxGantt CSS -->
+    <link rel="stylesheet" href="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css">
+    <!-- Include dhtmlxGantt JS -->
+    <script src="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js"></script>
 </head>
 <body id="test_20" >
     <!-- Navigation Bar -->
@@ -120,6 +124,22 @@
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FWinnipeg&bgcolor=%23ffffff&src=bWF0dC5pLmFzc29jQGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=MDUxN2Y0ZGZjZjlmNGY4Njc1MGMwMjIyNzI4YjdjNjEwODMxZTMyNzQzMWJmYjhlODRiY2I0NDY1NWY1NTk0YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%2333B679&color=%239E69AF&color=%230B8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
           
     </div>
+</section>
+
+    <!-- Gantt Section for XML embed -->
+<section id="gantt-demo">
+    <h2>Gantt Demo</h2>
+    
+      <div id="gantt_here" style="width:100%; height:600px;"></div>
+
+    <script>
+        // Initialize Gantt chart
+        gantt.init("gantt_here");
+
+        // Load the XML data from your MS Project
+        gantt.load("TestProj.xml", "xml");
+    </script>   
+    
 </section>
     
     <!-- Contact Section -->
