@@ -2,8 +2,7 @@
   "scripts": {
     "build": "your-build-command"
   }
-}
-                     {
+                       {
   "gantt": {
     "zIndex": 0,
     "enabled": true,
@@ -1046,6 +1045,6 @@
         "#01579b"
       ]
     }
-  }
 }
-                
+
+            
