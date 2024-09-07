@@ -63,22 +63,7 @@
             }
         }
     </style>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-gantt.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>
-  <script src="https://cdn.anychart.com/samples/gantt-working-with-data/gantt-tree-from-xml/data.js"></script>
-  <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
-  <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
-    <style type="text/css">
-    html, body, #container {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+  
 </head>
 <body id="test_20" >
     <!-- Navigation Bar -->
@@ -138,39 +123,7 @@
     </div>
 </section>
 
-    <!-- Gantt Section for XML embed -->
-<section id="gantt-demo">
-    <h2>Gantt Demo</h2>
-    
-<div id="container"></div>
 
-  <script>
-    anychart.onDocumentReady(function () {
-      // Make an AJAX call to load your XML data
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'TestProj.xml', true);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          var xmlData = xhr.responseText;
-          
-          // Restore the chart from XML
-          var chart = anychart.fromXml(xmlData);
-          
-          // Set container id for the chart
-          chart.container('container');
-
-          // Initiate chart drawing
-          chart.draw();
-
-          // Fit chart to all dates range
-          chart.fitAll();
-        }
-      };
-      xhr.send();
-    });
-  </script>
-    
-</section>
     
     <!-- Contact Section -->
     <section id="contact">
