@@ -1,53 +1,73 @@
-// Cube Demo
-const scene1 = new THREE.Scene();
-const camera1 = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
+function createRotatingScene(config) {
+    const container = document.getElementById(config.containerId);
+    if (!container) {
+        return null;
+    }
 
-const renderer1 = new THREE.WebGLRenderer();
-renderer1.setSize(600, 400);
-document.getElementById('cube-container').appendChild(renderer1.domElement);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    camera.position.z = config.cameraZ;
 
-// Create a cube
-const geometry1 = new THREE.BoxGeometry();
-const material1 = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry1, material1);
-scene1.add(cube);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
 
-camera1.position.z = 5;
+    const mesh = new THREE.Mesh(config.geometry, config.material);
+    scene.add(mesh);
 
-function animate1() {
-    requestAnimationFrame(animate1);
+    function resize() {
+        const width = Math.max(container.clientWidth, 1);
+        const height = Math.max(container.clientHeight, 1);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height, false);
+    }
 
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    let observer = null;
+    if (window.ResizeObserver) {
+        observer = new ResizeObserver(resize);
+        observer.observe(container);
+    } else {
+        window.addEventListener("resize", resize);
+    }
 
-    renderer1.render(scene1, camera1);
+    resize();
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        mesh.rotation.x += config.rotationStep.x;
+        mesh.rotation.y += config.rotationStep.y;
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    return {
+        dispose: function dispose() {
+            if (observer) {
+                observer.disconnect();
+            } else {
+                window.removeEventListener("resize", resize);
+            }
+            renderer.dispose();
+        }
+    };
 }
 
-animate1();
+createRotatingScene({
+    containerId: "cube-container",
+    geometry: new THREE.BoxGeometry(),
+    material: new THREE.MeshBasicMaterial({ color: 0x00ff00 }),
+    cameraZ: 5,
+    rotationStep: { x: 0.01, y: 0.01 }
+});
 
-// Torus Knot Demo
-const scene2 = new THREE.Scene();
-const camera2 = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
-
-const renderer2 = new THREE.WebGLRenderer();
-renderer2.setSize(600, 400);
-document.getElementById('torus-container').appendChild(renderer2.domElement);
-
-// Create a torus knot
-const geometry2 = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-const material2 = new THREE.MeshBasicMaterial({ color: 0xff6347, wireframe: true });
-const torusKnot = new THREE.Mesh(geometry2, material2);
-scene2.add(torusKnot);
-
-camera2.position.z = 30;
-
-function animate2() {
-    requestAnimationFrame(animate2);
-
-    torusKnot.rotation.x += 0.01;
-    torusKnot.rotation.y += 0.01;
-
-    renderer2.render(scene2, camera2);
-}
-
-animate2();
+createRotatingScene({
+    containerId: "torus-container",
+    geometry: new THREE.TorusKnotGeometry(10, 3, 100, 16),
+    material: new THREE.MeshBasicMaterial({ color: 0xff6347, wireframe: true }),
+    cameraZ: 30,
+    rotationStep: { x: 0.01, y: 0.01 }
+});
