@@ -7,6 +7,6 @@
     "preview:start": "powershell -ExecutionPolicy Bypass -File ./scripts/preview.ps1 -Action Start -Port 8000",
     "preview:stop": "powershell -ExecutionPolicy Bypass -File ./scripts/preview.ps1 -Action Stop -Port 8000",
     "preview:restart": "powershell -ExecutionPolicy Bypass -File ./scripts/preview.ps1 -Action Restart -Port 8000",
-    "build": "powershell -ExecutionPolicy Bypass -File ./scripts/build.ps1"
+    "build": "pwsh -File ./scripts/build.ps1"
   }
 }
