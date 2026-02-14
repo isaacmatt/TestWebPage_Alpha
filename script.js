@@ -13,7 +13,14 @@ function setCalendarView(view) {
     const params = new URLSearchParams({
         src: calendarSrc,
         ctz: timezone,
-        mode: view
+        mode: view,
+        showTitle: calendar.dataset.showTitle || "0",
+        showNav: calendar.dataset.showNav || "0",
+        showDate: calendar.dataset.showDate || "0",
+        showPrint: calendar.dataset.showPrint || "0",
+        showTabs: calendar.dataset.showTabs || "0",
+        showCalendars: calendar.dataset.showCalendars || "0",
+        showTz: calendar.dataset.showTimezone || "0"
     });
     calendar.src = "https://calendar.google.com/calendar/embed?" + params.toString();
 }
