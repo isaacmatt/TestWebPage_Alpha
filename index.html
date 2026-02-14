@@ -22,22 +22,43 @@
 
     <main class="page-content">
         <!-- Header Section -->
-        <header class="section">
-            <h1>Welcome to My Three.js Demo</h1>
+        <header class="section home-hero">
+            <p class="hero-tag">Interactive Playground</p>
+            <h1>Welcome to My <span id="hero-word">Three.js</span> Demo</h1>
             <p>Explore some implementations that I was testing such as the rotating cube and torus.</p>
             <p>This homepage now links to dedicated pages for each section so the site is easier to expand.</p>
         </header>
 
         <section class="section">
             <h2>Browse Sections</h2>
-            <div class="section-links">
-                <a href="about.html">About This Project</a>
-                <a href="cube.html">Rotating Cube Demo</a>
-                <a href="torus.html">Torus Knot Demo</a>
-                <a href="video.html">Video Demo</a>
-                <a href="calendar.html">Calendar Demo</a>
-                <a href="contact.html">Contact</a>
+            <p>Hover or click a card to trigger effects before you open the page.</p>
+            <div class="section-links interactive-sections">
+                <a class="section-card card-flip" data-effect="flip" data-message="About flips open to the project story and roadmap." href="about.html">
+                    <span class="card-front">About This Project</span>
+                    <span class="card-back">Flip Effect Active</span>
+                </a>
+                <a class="section-card card-shift" data-effect="shift" data-message="Cube shifts into motion and focuses on the rotating box scene." href="cube.html">
+                    <span class="card-front">Rotating Cube Demo</span>
+                    <span class="card-back">Shift Effect Active</span>
+                </a>
+                <a class="section-card card-flip" data-effect="flip" data-message="Torus rotates into view with wireframe styling." href="torus.html">
+                    <span class="card-front">Torus Knot Demo</span>
+                    <span class="card-back">Flip Effect Active</span>
+                </a>
+                <a class="section-card card-shift" data-effect="shift" data-message="Video slides forward with a cinematic preview feel." href="video.html">
+                    <span class="card-front">Video Demo</span>
+                    <span class="card-back">Shift Effect Active</span>
+                </a>
+                <a class="section-card card-glow" data-effect="glow" data-message="Calendar glows and switches between month and agenda views." href="calendar.html">
+                    <span class="card-front">Calendar Demo</span>
+                    <span class="card-back">Glow Effect Active</span>
+                </a>
+                <a class="section-card card-flip" data-effect="flip" data-message="Contact opens your message form and collaboration details." href="contact.html">
+                    <span class="card-front">Contact</span>
+                    <span class="card-back">Flip Effect Active</span>
+                </a>
             </div>
+            <div id="section-feedback" class="section-feedback" aria-live="polite">Try clicking any section card.</div>
         </section>
     </main>
 
