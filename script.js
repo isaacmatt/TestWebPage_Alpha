@@ -45,8 +45,47 @@ function initializeParallax() {
     });
 }
 
+function initializeHomeInteractions() {
+    const heroWord = document.getElementById("hero-word");
+    if (heroWord) {
+        const words = ["Three.js", "Interactive", "Creative", "Experimental"];
+        let index = 0;
+        window.setInterval(function() {
+            index = (index + 1) % words.length;
+            heroWord.textContent = words[index];
+        }, 1700);
+    }
+
+    const cards = document.querySelectorAll(".interactive-sections .section-card");
+    const feedback = document.getElementById("section-feedback");
+    if (!cards.length || !feedback) {
+        return;
+    }
+
+    cards.forEach(function(card) {
+        card.addEventListener("mouseenter", function() {
+            feedback.textContent = card.dataset.message || "Explore this section.";
+        });
+
+        card.addEventListener("focus", function() {
+            feedback.textContent = card.dataset.message || "Explore this section.";
+        });
+
+        card.addEventListener("click", function() {
+            cards.forEach(function(otherCard) {
+                otherCard.classList.remove("is-active");
+            });
+            card.classList.add("is-active");
+            const frontTitle = card.querySelector(".card-front");
+            const sectionName = frontTitle ? frontTitle.textContent.trim() : "section";
+            feedback.textContent = "Opening " + sectionName + "...";
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     setCalendarView("month");
     initializeCalendarControls();
     initializeParallax();
+    initializeHomeInteractions();
 });
