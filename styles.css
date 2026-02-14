@@ -79,6 +79,10 @@ body {
     background-color: var(--nav-link-hover);
 }
 
+.site-nav a.active {
+    background-color: #1e1e1e;
+}
+
 .page-content {
     width: min(980px, 100%);
     margin: 0 auto;
@@ -97,6 +101,23 @@ body {
 h1,
 h2 {
     margin-top: 0;
+}
+
+.section-links {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.section-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #0f3f8a;
+    font-weight: 600;
+}
+
+.section-links a:hover,
+.section-links a:focus-visible {
+    text-decoration: underline;
 }
 
 .demo-canvas {

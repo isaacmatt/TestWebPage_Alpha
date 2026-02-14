@@ -9,8 +9,11 @@ if (Test-Path $buildDir) {
 
 New-Item -Path $buildDir -ItemType Directory | Out-Null
 
+Get-ChildItem -Path $projectRoot -File -Filter *.html | ForEach-Object {
+    Copy-Item -Path $_.FullName -Destination $buildDir -Force
+}
+
 $rootFiles = @(
-    "index.html",
     "styles.css",
     "main.js",
     "script.js",
